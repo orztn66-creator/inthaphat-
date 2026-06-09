@@ -1,0 +1,23 @@
+{
+  "_title": "Zodiac Generator Constants Data",
+  "_description": "ข้อมูลอ้างอิงสำหรับการ Generate สมพุฏห์ดาวเคราะห์จากสารตั้งต้น",
+  "zodiac_constants": {
+    "FULL_CIRCLE_LIPDA": 21600,
+    "LIPDA_PER_RASI": 1800,
+    "LIPDA_PER_DEGREE": 60,
+    "HALF_CIRCLE_LIPDA": 10800
+  },
+  "rates_per_day": {
+    "rahu_8": -3.1794,
+    "ketu_9": 31.794,
+    "maritayu_0": 0.0117
+  },
+  "mean_rates_for_motion_check": {
+    "mars_3": 31.45,
+    "mercury_4": 59.13,
+    "jupiter_5": 4.99,
+    "venus_6": 59.13,
+    "saturn_7": 2.00
+  },
+  "rahu_epoch_constant": 11210 
+}

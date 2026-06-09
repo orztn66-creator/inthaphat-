@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "engineName": "Pichai Songkram Astrology Calculus Engine",
+    "version": "1.0.0"
+  },
+  "calendarConstants": {
+    "chulaBase": 738,
+    "avamanDivisor": 692,
+    "masasodhanDivisor": 292,
+    "attaThelerngSok": 48,
+    "totalMinutesInCircle": 21600
+  },
+  "planetaryMeanRates": {
+    "sun": 59.1352,
+    "moon": 790.5833,
+    "mars": 31.4333,
+    "mercury": 245.1111,
+    "jupiter": 4.9083,
+    "venus": 96.1388,
+    "saturn": 2.0055,
+    "rahu": -3.1833,
+    "ketu": -19.4333,
+    "uranus": 0.0701
+  },
+  "splineCoefficients": {
+    "note": "สัมประสิทธิ์พหุนามกำลังสาม (ax^3 + bx^2 + cx + d) อ้างอิงจากตารางฉายาเท่าขันธ์",
+    "sun": { "a": 0.0001, "b": -0.002, "c": 1.914, "d": 0.0 },
+    "moon": { "a": 0.0003, "b": -0.005, "c": 4.921, "d": 0.0 }
+  },
+  "inthaphatConfig": {
+    "chulaDivisor": 108,
+    "reukDivisor": 27,
+    "rasiDivisor": 12
+  }
+}

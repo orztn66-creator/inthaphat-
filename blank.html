@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บรรณานุกรม — สุริยยาตร์ Ultimate N000</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0f172a; --card: #1e293b; --text: #f8fafc;
+            --gold: #fbbf24; --muted: #94a3b8; --border: #334155;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; font-family: 'Sarabun', sans-serif;
+            background: var(--dark); color: var(--text);
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: flex-start;
+            padding: 40px 20px;
+        }
+        header {
+            width: 100%; max-width: 860px;
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 36px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+        header h1 { margin: 0; color: var(--gold); font-size: 1.5rem; }
+        .back-btn {
+            background: rgba(251,191,36,0.1); border: 1px solid var(--gold);
+            color: var(--gold); padding: 7px 16px; border-radius: 8px;
+            font-size: 0.85rem; font-weight: bold; text-decoration: none;
+            transition: background 0.2s;
+        }
+        .back-btn:hover { background: rgba(251,191,36,0.22); }
+        main { width: 100%; max-width: 860px; }
+        .notice-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 14px 14px 0;
+            padding: 28px 32px; margin-bottom: 28px;
+            text-align: center;
+        }
+        .notice-card .icon { font-size: 3rem; margin-bottom: 12px; }
+        .notice-card h2 { color: var(--gold); margin: 0 0 8px; font-size: 1.4rem; }
+        .notice-card p { color: var(--muted); margin: 0; font-size: 0.95rem; line-height: 1.8; }
+        .section-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px 24px; margin-bottom: 14px;
+        }
+        .section-card h3 {
+            color: var(--gold); margin: 0 0 12px;
+            font-size: 1rem; border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        .bib-item {
+            padding: 9px 0; border-bottom: 1px solid rgba(51,65,85,0.5);
+            font-size: 0.9rem; color: var(--muted); line-height: 1.6;
+        }
+        .bib-item:last-child { border-bottom: none; }
+        .bib-item .authors { color: #f8fafc; font-weight: 600; }
+        .bib-item .title { color: #fde68a; font-style: italic; }
+        footer {
+            margin-top: 48px; color: var(--muted);
+            font-size: 0.78rem; text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 20px; width: 100%; max-width: 860px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📖 บรรณานุกรม</h1>
+    <a href="index.html" class="back-btn">← กลับสู่แอปหลัก</a>
+</header>
+
+<main>
+    <div class="notice-card">
+        <div class="icon">📚</div>
+        <h2>บรรณานุกรมและเอกสารอ้างอิง</h2>
+        <p>หน้านี้รวบรวมรายชื่อคัมภีร์ ตำรา และเอกสารอ้างอิงหลักที่ใช้เป็นฐานในการพัฒนาระบบคำนวณสุริยยาตร์<br>
+        กรุณาแจ้งผู้พัฒนาเพื่อเพิ่มเติมรายการอ้างอิงให้ครบถ้วน</p>
+    </div>
+
+    <div class="section-card">
+        <h3>📜 คัมภีร์และตำราโบราณ (Classical Texts)</h3>
+        <div class="bib-item">
+            <span class="authors">ไม่ปรากฏนามผู้แต่ง.</span>
+            <span class="title"> คัมภีร์สุริยยาตร์ (Suriyayart).</span> สมัยโบราณ. ฉบับคัดลอก.
+        </div>
+        <div class="bib-item">
+            <span class="authors">ไม่ปรากฏนามผู้แต่ง.</span>
+            <span class="title"> คัมภีร์พระมานัตต์ (Manat).</span> สมัยโบราณ. ฉบับคัดลอก.
+        </div>
+        <div class="bib-item">
+            <span class="authors">หลวงวุฒิรณพัสดุ (วุฒิ วิเศษจินดา).</span>
+            <span class="title"> คัมภีร์อินทภาสบาทจันทร์.</span> กรุงเทพฯ: โรงพิมพ์ไทยวัฒนาพานิช, 2519.
+        </div>
+        <div class="bib-item">
+            <span class="authors">ไม่ปรากฏนามผู้แต่ง.</span>
+            <span class="title"> ตำราดวงพิชัยสงคราม.</span> ฉบับสมุดไทยดำ. หอสมุดแห่งชาติ.
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h3>📗 หนังสืออ้างอิงสมัยใหม่ (Modern References)</h3>
+        <div class="bib-item">
+            <span class="authors">เทพย์ สาริกบุตร.</span>
+            <span class="title"> โหราศาสตร์ไทยมาตรฐาน เล่ม ๑-๓.</span> กรุงเทพฯ: โรงพิมพ์รุ่งเรืองธรรม, 2540.
+        </div>
+        <div class="bib-item">
+            <span class="authors">วิชัย เมืองจันทร์.</span>
+            <span class="title"> คู่มือคำนวณดวงชะตาไทย.</span> กรุงเทพฯ: โอเดียนสโตร์, 2552.
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h3>🌐 แหล่งอ้างอิงออนไลน์ (Online Sources)</h3>
+        <div class="bib-item">
+            คัมภีร์สุริยยาตร์ดิจิทัล — รอเพิ่มเติมลิงก์อ้างอิง
+        </div>
+        <div class="bib-item">
+            ฐานข้อมูลโหราศาสตร์ไทย — รอเพิ่มเติมลิงก์อ้างอิง
+        </div>
+    </div>
+
+    <div class="section-card" style="border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.04);">
+        <h3>⚠️ หมายเหตุสำคัญ</h3>
+        <p style="margin:0;color:#94a3b8;font-size:0.88rem;line-height:1.8;">
+            ระบบนี้พัฒนาขึ้นเพื่อการศึกษาและวิจัยโหราศาสตร์ไทยโบราณเท่านั้น การคำนวณทั้งหมดอ้างอิง
+            <strong style="color:#fbbf24;">คัมภีร์สุริยยาตร์และพระมานัตต์</strong> เป็นหลัก
+            โดยไม่นำสูตรคำนวณสากลสมัยใหม่ (NASA / Lahiri) มาเจือปน
+        </p>
+    </div>
+</main>
+
+<footer>
+    สุริยยาตร์ Ultimate N000 — Calculus Edition &nbsp;|&nbsp;
+    อ้างอิงเฉพาะคัมภีร์สุริยยาตร์และพระมานัตต์
+</footer>
+
+</body>
+</html>

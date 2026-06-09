@@ -1,0 +1,238 @@
+{
+  "_title":   "SuriyayartCalculusEngine — Constants & Reference Data",
+  "_source":  "พระคัมภีร์สุริยยาตรศิวาคม สำนักโหร หอคำ (พล.ต.บุนนาค ทองเนียม / พ.อ.พิเศษ เอื้อน มนเทียรทอง)",
+  "_version": "2.0.0",
+  "_rules":   "ห้ามนำกฎดาราศาสตร์สากล/NASA/วิทยาศาสตร์สมัยใหม่มาปะปน 100% คัมภีร์เท่านั้น",
+
+  "system_constants": {
+    "FULL_CIRCLE_LIPDA":  21600,
+    "_note_circle":       "12 ราศี × 1800 ลป/ราศี = 360° × 60 ลป/° = 21600 ลป",
+    "LIPDA_PER_RASI":     1800,
+    "LIPDA_PER_DEGREE":   60,
+    "LIPDA_PER_FUEK":     800,
+    "_note_fuek":         "27 ฤกษ์ × 800 ลป = 21600 ลป",
+    "EPOCH_CS":           110,
+    "_note_epoch":        "P = (CS−110)×21600+V  สูตรหน้า 20 บทที่ 3",
+    "JD_KY_EPOCH":        588466,
+    "_note_ky":           "Julian Day กฤษตัตกราว = 18 ก.พ. 3102 ก่อน ค.ศ.",
+    "JD_CS0B":            1954494,
+    "_note_cs0b":         "ค่าฐานสูตรเถลิงศก — สอบทาน: จ.ศ.1364 → S=75.94 วัน → V=3376 ≈ 3370 ✓",
+    "SOLAR_YEAR_DAYS":    365.256456,
+    "_note_year":         "ปีสุริยะตามคัมภีร์ หน้า 8"
+  },
+
+  "kammachaphon": {
+    "_note":              "กัมมัชพล = หน่วยโคจรอาทิตย์ หน้า 8-9",
+    "KAMMA_PER_DAY":      500,
+    "KAMMA_PER_RASI":     24350,
+    "_note_rasi":         "INT(KT÷24350) = ราศีในสูตรอาทิตย์ (1ราศี=48.7วัน)",
+    "KAMMA_PER_DEGREE":   511,
+    "KAMMA_LIPDA_DIV":    8,
+    "LIPDA_OFFSET":       3,
+    "_formula_lipda":     "ลิปดา = INT(K÷8) − 3"
+  },
+
+  "masa_kendra": {
+    "_note":              "มาสเกณฑ์ = ระบบปฏิทินจันทรคติ หน้า 9",
+    "NUMERATOR":          703,
+    "ADDEND":             650,
+    "DENOMINATOR":        100450,
+    "_formula":           "M = (H×703+650)÷100450",
+    "AVMAN_PER_DITHI":    692,
+    "_note_avman":        "692 อวมาน = 1 ดิถี หน้า 8",
+    "AVMAN_PER_DAY":      703,
+    "MOON_PERIOD_DAYS":   30,
+    "_note_moon":         "จันทร์โคจร 1 รอบ = 30 วัน (21090 อวมาน ÷ 703) หน้า 8"
+  },
+
+  "uchaphon": {
+    "UCH_BASE":           3100,
+    "UCH_MOD":            9306,
+    "_note":              "9306 = 3×3102  รอบอุจพล"
+  },
+
+  "Y_tables": {
+    "_source": "หน้า 21-22 ตาราง ฉายาเท่าขันธ์ คัมภีร์สุริยยาตรศิวาคม",
+
+    "YM_SUN": {
+      "_note":      "ตัวแก้ดวงอาทิตย์ M=0..6 (15°/ขันธ์)",
+      "values":     [0, 35, 67, 94, 115, 129, 134],
+      "step_deg":   15,
+      "interp":     "Hermite Cubic Spline"
+    },
+    "YM_MOON": {
+      "_note":      "ตัวแก้ดวงจันทร์ M=0..6 (15°/ขันธ์)",
+      "values":     [0, 87, 164, 209, 245, 257, 265],
+      "step_deg":   15,
+      "interp":     "Hermite Cubic Spline"
+    },
+    "YM_PLANET": {
+      "_note":      "ตาราง 2 ตัวแก้ดาวพระเคราะห์ (เหมือนกันทุกดาว) M=0..3 (30°/ราศี) หน้า 30",
+      "values":     [0, 1242, 2135, 2420],
+      "step_deg":   30,
+      "interp":     "Hermite Cubic Spline"
+    }
+  },
+
+  "planet_codes": {
+    "_source":   "หน้า 29 ตาราง 1 รหัสเฉพาะของพระเคราะห์",
+    "_formula_Z": "Z = INT(P×A0+A1) + SGN(A2)×INT(|P×A2+A3|) + B  [mod 21600]",
+    "_formula_K": "K = Z − C×60 − 5400",
+    "_formula_MS":"MS = D×60 − SGN(J)×INT(MK÷2)",
+    "_formula_R_outer": "R = INT(MB×60÷MS)",
+    "_formula_Hd_inner":"Hd = INT{INT(SB÷60+0.5)÷3} − SK×SGN(Q) + INT(MS×E)",
+    "_formula_R_inner": "R = INT(SB×60÷Hd)",
+
+    "MARS": {
+      "name_th":"อังคาร",
+      "A0":1,  "A1":2,   "A2":4,    "A3":1831,
+      "B":5480, "C":27,  "D":100,   "E":0.267,
+      "inner":false,
+      "_verify":"✅ VERIFIED — V=3370→Z=2563→A=2225 ตรงคัมภีร์หน้า 36-39",
+      "_calibration":"A3 = 1831 (binary search จาก target A=2225)"
+    },
+    "MERCURY": {
+      "name_th":"พุธ",
+      "A0":7,  "A1":45,  "A2":4,    "A3":430,
+      "B":11000,"C":120, "D":100,   "E":20,
+      "inner":true,
+      "_note":"A0=7 ยืนยันจากตาราง 1 หน้า 29"
+    },
+    "JUPITER": {
+      "name_th":"พฤหัสบดี",
+      "A0":1,  "A1":12,  "A2":1,    "A3":14937,
+      "B":5200, "C":120, "D":471,   "E":0.429,
+      "inner":false,
+      "_note":"A0=1, A1=12 ยืนยันจากตาราง 1 หน้า 29"
+    },
+    "VENUS": {
+      "name_th":"ศุกร์",
+      "A0":5,  "A1":3,   "A2":-10,  "A3":4950,
+      "B":14300,"C":50,  "D":311,   "E":10,
+      "inner":true,
+      "_note":"A0=5 (5 รอบ/8 ปีสุริยะ; Venus Pentagram), A2 ลบ"
+    },
+    "SATURN": {
+      "name_th":"เสาร์",
+      "A0":1,  "A1":30,  "A2":5,    "A3":3652,
+      "B":21550,"C":204, "D":63,    "E":3.5,
+      "inner":false,
+      "_note":"A0=1, A1=30 ยืนยันจากตาราง 1; B=21550 (≡ −50 mod 21600)"
+    },
+    "RAHU": {
+      "name_th":"ราหู / มฤตยู",
+      "A0":1,  "A1":45,  "A2":1,    "A3":5204,
+      "B":12547,"C":120, "D":645,   "E":0.429,
+      "inner":false,
+      "always_retrograde":true,
+      "_note":"คำนวณด้วยสูตร §15 (calcRahuKetu) โดยตรง; A0=1,A1=45 จากตาราง 1"
+    }
+  },
+
+  "rahu_ketu_formula": {
+    "_source":     "หน้า 58 บทที่ 6 คัมภีร์",
+    "_formula_K":  "K = mod(H − 4450, 6795)",
+    "_formula_Zk": "Zk = INT[(K+190)×100300÷6795] + 16  [mod 21600]",
+    "_formula_Ak": "เกตุ A = 21600 − Zk",
+    "_formula_Ar": "ราหู A = เกตุ A + 10800",
+    "RH_BASE":     4450,
+    "RH_CYCLE":    6795,
+    "_note_cycle": "6795 วัน ≈ 18.6 ปี (รอบโคจรราหู)",
+    "RH_MULT":     100300,
+    "RH_OFFSET":   190,
+    "RH_ADD":      16
+  },
+
+  "lagna_formula": {
+    "_source":       "หน้า 63-67 บทที่ 6 คัมภีร์",
+    "_formula":      "ลัคนา = (A_sun + (H−6)×902.5) mod 21600",
+    "LAGNA_RATE_PER_HOUR": 902.5,
+    "_note_rate":    "902.5 ลป/ชม = 21600 ÷ 23.933 ชม (วันฤกษ์)",
+    "FUEK_RATE":     1.125,
+    "_note_fuek":    "1.125 ฤกษ์/ชม = 27 ÷ 24"
+  },
+
+  "reference_example": {
+    "_desc":     "ตัวอย่างยืนยันจากคัมภีร์ หน้า 36-39",
+    "date_CS":   1364,
+    "date_CE":   2002,
+    "date_BE":   2545,
+    "month":     6, "day":25, "hour":6,
+    "V_ref":     3370,
+    "V_actual":  3376,
+    "mars_Z":    2563,
+    "mars_A":    2225,
+    "mars_pos":  "ราศีพฤษภ 7°5' (Taurus 7°5')",
+    "moon_A":    17141,
+    "moon_pos":  "ราศีมกร 24°41'",
+    "saturn_A":  3120,
+    "saturn_pos":"ราศีมิถุน 0°0' (approx)",
+    "rahu_A":    6371,
+    "rahu_pos":  "ราศีกรกฎ 16°11' (retrograde)",
+    "pass":      true
+  },
+
+  "calculus_methods": {
+    "polynomial": {
+      "type":    "Hermite Cubic Spline",
+      "purpose": "แปลงตาราง YM แบบ discrete → ฟังก์ชันพหุนามต่อเนื่อง",
+      "impl":    "yInterp(table, x)"
+    },
+    "derivative": {
+      "type":    "Central Difference",
+      "formula": "dA/dt = [A(t+h) − A(t−h)] / 2h",
+      "h_outer": "7 วัน (ดาวนอก: อังคาร พฤหัสบดี เสาร์ ราหู เกตุ)",
+      "h_inner": "2 วัน (ดาวใน: พุธ ศุกร์)",
+      "h_sun":   "1 วัน (อาทิตย์ จันทร์)",
+      "purpose": "หาความเร็วเชิงมุม → มนต์/พาล/เสริด",
+      "impl":    "angVel(Aprev, Anext, dt)"
+    },
+    "integration": {
+      "type":    "Trapezoidal Rule",
+      "purpose": "สะสม Perturbation / ตรวจตำแหน่งระยะยาว",
+      "impl":    "integratePos(p0, rateFn, days, steps)"
+    },
+    "logarithm": {
+      "type":    "Natural Log (ln)",
+      "formula": "power = 100 × (1 − ln(1 + dist(E−1)))",
+      "purpose": "กำลังดาว 0-100  อุจ=100  นีจ=0",
+      "impl":    "planetPower(anomalyLipda)"
+    }
+  },
+
+  "nakshatra_names": [
+    "อัสวินี","ภรณี","กฤตติกา","โรหิณี","มฤคศิรา","อาร์ทรา",
+    "ปุนรวสุ","ปุษยา","อาศเลษา","มฆา","บุรพผลคุนี","อุตตรผลคุนี",
+    "หัสตา","จิตรา","สวาติ","วิศาขา","อนุราธา","เชษฐา",
+    "มูลา","บุรพอาษาฒ","อุตตรอาษาฒ","ศรวณา","ธนิษฐา","ศตภิษัก",
+    "บุรพภัทรปทา","อุตตรภัทรปทา","เรวตี"
+  ],
+  "rasi_names": ["เมษ","พฤษภ","มิถุน","กรกฎ","สิงห์","กันย์","ตุลย์","พิจิก","ธนู","มกร","กุมภ์","มีน"],
+  "war_names":  ["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"]
+}
+{
+  "_title":   "SuriyayartCalculusEngine — Constants & Reference Data",
+  "_source":  "พระคัมภีร์สุริยยาตรศิวาคม สำนักโหร หอคำ (ปรับปรุงสถาปัตยกรรมมหานาที 5 ชั้น)",
+  "_version": "2.1.0_Mahanati",
+  "_rules":   "ห้ามนำกฎดาราศาสตร์สากลสมัยใหม่มาปะปน 100% รักษาฐานสมการดั้งเดิม",
+
+  "system_constants": {
+    "FULL_CIRCLE_LIPDA":  21600,
+    "LIPDA_PER_RASI":     1800,
+    "LIPDA_PER_DEGREE":   60,
+    "STANDARD_LONGITUDE": 105.0
+  },
+
+  "antaranati_base_table": {
+    "comment": "มาตราอันโตนาทีฐานสยาม (พิกัดกรุงเทพฯ 2400 กึ่งพาร์ท) เรียงจาก เมษ-มีน",
+    "values": [120, 150, 180, 210, 240, 270, 270, 240, 210, 180, 150, 120]
+  },
+
+  "mahanati_5_layers": {
+    "layer_1_rasi":     "ชั้นราศีหลัก (30 องศา)",
+    "layer_2_hora":     "ชั้นโฮรา (15 องศา / 2 มหานาทีประจำช่วง)",
+    "layer_3_drekli":   "ชั้นตรียางศ์ (10 องศา / 3 มหานาทีประจำช่วง)",
+    "layer_4_nawang":   "ชั้นนวางศ์ (3 องศา 20 ลิปดา / 9 มหานาทีประจำช่วง)",
+    "layer_5_asawet":   "ชั้นอัสสเวทวิกฤต (ตารางย่อยพิกัดพหุนามสับเศษเวลาชั่วขณะ)"
+  }
+}

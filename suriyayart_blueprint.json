@@ -1,0 +1,105 @@
+{
+  "scripture_metadata": {
+    "title": "พระคัมภีร์สุริยยาตร์และสารัมภ์ ฉบับแกนกลศาสตร์ดาราศาตร์ไทย",
+    "version": "1.0.0_ellipse_engine",
+    "description": "เกณฑ์ค่าคงที่ศักดิ์สิทธิ์สำหรับคำนวณมัธยมดาว และอัตราฉายาขัดสีสมผุส ๒ ชั้น (พัก มน เสริด)"
+  },
+  "epoch_constants": {
+    "avaman_divisor": 692,
+    "masakian_multiplier": 292207,
+    "kammachaphon_divisor": 800,
+    "horasart_dawn_minutes": 360,
+    "rasi_degrees": 30,
+    "degree_minutes": 60,
+    "circle_total_minutes": 21600
+  },
+  "planetary_motion_registry": {
+    "comment": "เกณฑ์พระเคราะห์สาร อัตราอุจจภาพ (Apogee) และอัตราเปลี่ยนเวกเตอร์เพื่อหา เสริด พัก มน",
+    "๑_sun": {
+      "name": "อาทิตย์",
+      "base_divisor": 800,
+      "apogee_degree": 80,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "slow_mon": 57, "fast_serid": 61 }
+    },
+    "๒_moon": {
+      "name": "จันทร์",
+      "base_divisor": 700,
+      "apogee_degree": 0,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "slow_mon": 740, "fast_serid": 830 }
+    },
+    "๓_mars": {
+      "name": "อังคาร",
+      "base_divisor": 124,
+      "apogee_degree": 124,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "retrograde_phak": -5, "slow_mon": 0, "fast_serid": 45 }
+    },
+    "๔_mercury": {
+      "name": "พุธ",
+      "base_divisor": 418,
+      "apogee_degree": 220,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "retrograde_phak": -10, "slow_mon": 2, "fast_serid": 100 }
+    },
+    "๕_jupiter": {
+      "name": "พฤหัสบดี",
+      "base_divisor": 346,
+      "apogee_degree": 167,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "retrograde_phak": -2, "slow_mon": 1, "fast_serid": 14 }
+    },
+    "๖_venus": {
+      "name": "ศุกร์",
+      "base_divisor": 704,
+      "apogee_degree": 78,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "retrograde_phak": -12, "slow_mon": 0, "fast_serid": 76 }
+    },
+    "๗_saturn": {
+      "name": "เสาร์",
+      "base_divisor": 913,
+      "apogee_degree": 242,
+      "apogee_lipda": 0,
+      "motion_status_limits": { "retrograde_phak": -1, "slow_mon": 0, "fast_serid": 5 }
+    },
+    "๘_rahu": {
+      "name": "ราหู",
+      "comment": "ดาวราหูเดินทวนจักรราศีเสมอ (พักตลอดกาลตามกฎคัมภีร์)",
+      "base_divisor": 6794,
+      "motion_status_limits": { "retrograde_phak": -3, "slow_mon": -3, "fast_serid": -3 }
+    },
+    "๙_ketu": {
+      "name": "เกตุไทย",
+      "base_divisor": 679,
+      "motion_status_limits": { "fast_serid": 18 }
+    },
+    "๐_mrittayu": {
+      "name": "มฤตยู",
+      "base_divisor": 30680,
+      "motion_status_limits": { "slow_mon": 0, "fast_serid": 1 }
+    }
+  },
+  "output_state_blueprint": {
+    "calculated_at_julaSakarat": 0,
+    "horakhun": 0,
+    "masakian": 0,
+    "avaman": 0,
+    "dithi": 0,
+    "is_athikamas": false,
+    "is_athikawan": false,
+    "planetary_positions": {
+      "๑": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "เสริด" },
+      "๒": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "ปกติ" },
+      "๓": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "พัก" },
+      "๔": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "มน" },
+      "๕": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "ปกติ" },
+      "๖": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "เสริด" },
+      "๗": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "พัก" },
+      "๘": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "เวียนซ้าย" },
+      "๙": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "เดินเร่ง" },
+      "๐": { "rasi": 0, "deg": 0, "lipda": 0, "motion_text": "ปกติ" }
+    }
+  }
+}

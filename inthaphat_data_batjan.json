@@ -1,0 +1,60 @@
+{
+  "system_metadata": {
+    "title": "มหาคัมภีร์อินทภาษบาทจันทร์ ฉบับรวมกระแสโลกธาตุ",
+    "authority": "พ.ต. หลวงวุฒิรณพัสดุ (วุฒิ วิเศษจินดา)",
+    "framework": "Suriyayart & Phra Manat Traditional Astronomy",
+    "version": "1.0.0_merged"
+  },
+  "astronomical_constants": {
+    "TOTAL_RERK": 27,
+    "BATH_PER_RERK": 4,
+    "NAWANGSE_PER_RASI": 9,
+    "TOTAL_RASI": 12,
+    "DAYS_PER_MONTH": 30,
+    "MONTHS_PER_YEAR": 12,
+    "DAYS_PER_YEAR": 360,
+    "CYCLE_SAKKARAT": 108,
+    "BASE_RASI_OFFSET": 1,
+    "chulaDivisor": 108,
+    "layerDivisor": 4,
+    "moonDivisor": 700,
+    "minuteDivisor": 13,
+    "maxMatrixValues": {
+      "layer4_day": 25,
+      "layer3_month": 11,
+      "layer2_year": 3,
+      "layer1_nakhat": 26
+    },
+    "matrixSubtractions": {
+      "layer4_day": 30,
+      "layer3_month": 12,
+      "layer2_year": 4,
+      "layer1_nakhat": 27
+    }
+  },
+  "rasi_registry": [
+    "เมษ", "พฤษภ", "เมถุน", "กรกฎ", "สิงห์", "กันย์", 
+    "ตุล", "พิจิก", "ธนู", "มังกร", "กุมภ์", "มีน"
+  ],
+  "rerk_registry": [
+    "อัศวินี", "ภรณี", "กฤตติกา", "โรหิณี", "มฤคศิระ", "อารทรา",
+    "ปุนัพพสุ", "ปุสสะ", "อสิเลสะ", "มาฆะ", "บุรพผลคุนี", "อุตตรผลคุนี",
+    "หัสตะ", "จิตรา", "สวาตี", "วิสาขา", "อนุราธะ", "เชฏฐะ",
+    "มูละ", "ปุรพษาฑา", "อุตตรษาฑา", "ศรวณะ", "ธนิษฐา", "ศตภิสัช",
+    "บุรพภัทรบท", "อุตตรภัทรบท", "เรวดี"
+  ],
+  "mrittayu_ghat_offsets": {
+    "pathom_mrittayu": 0,
+    "kala_mrittayu": 10,
+    "withe_mrittayu": 20,
+    "pathom_ghat": 5,
+    "thutiya_ghat": 14,
+    "tatiya_ghat": 24
+  },
+  "evaluation_matrix": {
+    "negative_criteria": [0, 1, 2, 3, 5, 6],
+    "even_status": "วัฒนะ",
+    "odd_status": "หายนะ"
+  }
+}
+//ให้เช็กเพิ่มด้วยว่า ถ้า targetNakhatIndex (เลขฤกษ์สุดท้าย) ไปตรงกับเลขฤกษ์ที่ติดพิษ ให้ AI พ่นคำเตือนเรื่องพิษนั้น ๆ ออกมาด้วย"
